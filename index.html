@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" type="module"></script>
+    <title>Morpion</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #cbcfd1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .step {
+        margin-bottom: 1rem;
+        width: 196px;
+        padding: 1rem;
+        background: #b0b6ba;
+      }
+
+      .stepplayer1 {
+        color: #8e1fff;
+        font-weight: bold;
+      }
+
+      .stepplayer2 {
+        color: #ffd639;
+        font-weight: bold;
+      }
+
+      .morpion {
+        display: inline-grid;
+        padding: 4px;
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+        gap: 4px;
+        background-color: #b0b6ba;
+      }
+
+      .morpion > * {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border: 2px solid #6a736f;
+        user-select: none;
+      }
+
+      .morpion > [data-status="notPlayed"] {
+        cursor: pointer;
+        background: #b0b6ba;
+      }
+
+      .morpion > [data-status="round"] {
+        background: #ffd639;
+      }
+
+      .morpion > [data-status="cross"] {
+        background: #8e1fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="step">
+      It's <span class="stepplayer1">Player 1</span>'s turn!
+    </div>
+    <div class="morpion"></div>
+  </body>
+</html>
